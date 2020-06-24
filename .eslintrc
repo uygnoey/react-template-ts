@@ -1,9 +1,24 @@
 {
   "extends": [
-    "airbnb",
-    "prettier"
+    "airbnb-typescript",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "react/prefer-stateless-function": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-one-expression-per-line": "off",
@@ -16,9 +31,23 @@
       }
     ],
     "no-param-reassign": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "env": {
-    "browser": true
-  }
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "overrides": [
+    {
+      // require() statements allowed in .js files
+      "files": [
+        "*.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
