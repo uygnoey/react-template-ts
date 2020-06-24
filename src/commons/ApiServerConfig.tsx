@@ -1,5 +1,5 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import _ from 'lodash';
+import axios, { AxiosRequestConfig } from "axios";
+import _ from "lodash";
 
 export const config: any = (() => {
   const env: any = {
